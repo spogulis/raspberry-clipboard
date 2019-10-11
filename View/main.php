@@ -4,7 +4,7 @@
 ?>
 
 <!DOCTYPE html>
-<html lang="lv">
+<html lang='lv'>
     <head>
         <?php require_once('templates/head-tag-contents.php'); ?>
     </head>
@@ -15,23 +15,24 @@
         </header>
         
         <main>
-            <div class="d-flex column-wrapper">
-                <form method="post" action="SendMessage/submit" class="col">
+            <div class='d-flex column-wrapper'>
+                <form method='post' action='SendMessage/submit' class='col'>
                     <div>
-                        <label for="messageInput">Msg:</label>
-                        <textArea type="text" class="form-control input-lg" name="messageInput"></textarea>
+                        <label for='messageInput'>Msg:</label>
+                        <textArea type='text' class='form-control input-lg' name='messageInput'></textarea>
                     </div>
     
                     <!-- Submit btn -->
-                    <div class="row my-3">
-                        <button id="submit-btn" class="btn btn-outline-info btn-default mx-auto" type="submit">Send</button>
+                    <div class='row my-3'>
+                        <button id='submit-btn' class='btn btn-outline-info btn-default mx-auto' type='submit'>Send</button>
                     </div>
                 </form>
     
-                <div class="col">
+                <div class='col'>
                     <?php echo $LATEST_MESSAGE ? '<label for="latestMessage">Latest message:</label>' : '';?>
+                    <button type='button' id='copyBtn' class='btn btn-secondary ml-3' onclick='copyMessage(); return false'>Copy</button>
                     <br>
-                    <p name="latestMessage"><?php echo $LATEST_MESSAGE; ?></p>
+                    <p id='latestMessage' name='latestMessage'><?php echo $LATEST_MESSAGE; ?></p>
                 </div>
 
             </div>
