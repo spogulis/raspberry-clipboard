@@ -1,0 +1,38 @@
+/* Variables
+-------------------------------------------------------------------------*/
+
+$tablet: 576px;
+
+/* Mixins
+-------------------------------------------------------------------------*/
+
+@mixin tablet 
+{
+    @media (min-width: #{$tablet}) 
+    {
+        @content;
+    }
+}
+
+/*Styles
+-------------------------------------------------------------------------*/
+.form-control.input-lg {
+    height: 200px;
+}
+
+.column-wrapper {
+    flex-direction: column;
+
+    @include tablet {
+        flex-direction: row;
+    }
+}
+
+.col p {
+    word-wrap: anywhere;
+}
+
+.error 
+{
+    color: red;
+}
